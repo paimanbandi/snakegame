@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "5fc3f85f-8805-4e93-966c-73db64a3492e",
+		"name": "Snake Game",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1472244"
+	},
+	"item": [
+		{
+			"name": "NEW GAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/new?w=20&h=20",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"new"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "20"
+						},
+						{
+							"key": "h",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VALIDATE GAME",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"state\": {\n    \"gameId\": \"ca99706d957cd5f288b93b9264632857\",\n    \"width\": 10,\n    \"height\": 10,\n    \"score\": 5,\n    \"fruit\": {\n      \"x\": 3,\n      \"y\": 4\n    },\n    \"snake\": {\n      \"x\": 5,\n      \"y\": 6,\n      \"velX\": 1,\n      \"velY\": 0\n    }\n  },\n\"ticks\": [\n    {\n      \"velX\": 0,\n      \"velY\": 1\n    },\n    {\n      \"velX\": -1,\n      \"velY\": 0\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/validate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"validate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
